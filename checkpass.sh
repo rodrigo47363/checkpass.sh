@@ -1,24 +1,17 @@
 #!/bin/bash
 
-# Script para comprobar si una contraseña está en un archivo de diccionario
-# Función para mostrar el banner 
+# Función para mostrar el banner
 mostrar_banner() {
+cat << "EOF"
+       _               _                              _
+  ___ | |__   ___  ___| | ___ __   __ _ ___ ___   ___| |__
+ / _ \| '_ \ / _ \/ __| |/ / '_ \ / _` / __/ __| / __| '_ \
+| (_) | | | |  __/ (__|   <| |_) | (_| \__ \__ \_\__ \ | | |
+ \___/|_| |_|\___|\___|_|\_\ .__/ \__,_|___/___(_)___/_| |_|
+                           |_|
 
-
-           /$$                           /$$                                                           /$$      
-          | $$                          | $$                                                          | $$      
-  /$$$$$$$| $$$$$$$   /$$$$$$   /$$$$$$$| $$   /$$  /$$$$$$   /$$$$$$   /$$$$$$$ /$$$$$$$     /$$$$$$$| $$$$$$$ 
- /$$_____/| $$__  $$ /$$__  $$ /$$_____/| $$  /$$/ /$$__  $$ |____  $$ /$$_____//$$_____/    /$$_____/| $$__  $$
-| $$      | $$  \ $$| $$$$$$$$| $$      | $$$$$$/ | $$  \ $$  /$$$$$$$|  $$$$$$|  $$$$$$    |  $$$$$$ | $$  \ $$
-| $$      | $$  | $$| $$_____/| $$      | $$_  $$ | $$  | $$ /$$__  $$ \____  $$\____  $$    \____  $$| $$  | $$
-|  $$$$$$$| $$  | $$|  $$$$$$$|  $$$$$$$| $$ \  $$| $$$$$$$/|  $$$$$$$ /$$$$$$$//$$$$$$$//$$ /$$$$$$$/| $$  | $$
- \_______/|__/  |__/ \_______/ \_______/|__/  \__/| $$____/  \_______/|_______/|_______/|__/|_______/ |__/  |__/
-                                                  | $$                                                          
-                                                  | $$                                                          
-                                                  |__/                                                          (power by rodrigo47363  
-                                                                                                                github.com/rodrigo47363 )
+EOF
 }
-
 
 # Función para mostrar el menú
 mostrar_menu() {
@@ -72,8 +65,8 @@ while true; do
                 echo "El archivo de diccionario '$diccionario' no existe. Por favor, verifica la ruta e intenta de nuevo."
                 continue
             fi
-            # Buscar la contraseña en el archivo de diccionario
-            if grep -wq "$pass" "$diccionario"; then
+            # Buscar la contraseña en el archivo de diccionario usando strings y grep
+            if strings "$diccionario" | grep -Fxq "$pass"; then
                 echo "La contraseña '$pass' se encuentra en el diccionario."
             else
                 echo "La contraseña '$pass' NO se encuentra en el diccionario."
