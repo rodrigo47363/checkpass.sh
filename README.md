@@ -13,8 +13,22 @@ Este script en Bash permite verificar si una contraseña especificada está pres
 - **Salir**: Termina la ejecución del script.
 
 ## Uso
-1. Ejecuta el script `checkpass.sh` desde la línea de comandos.
-2. Sigue las instrucciones del menú interactivo para seleccionar las opciones correspondientes:
+1. **Descargar el script**:
+   - Puedes descargar el script desde GitHub utilizando el siguiente comando:
+     ```bash
+     wget https://raw.githubusercontent.com/rodrigo47363/checkpass/main/checkpass.sh
+     ```
+   - O clonar el repositorio:
+     ```bash
+     git clone https://github.com/rodrigo47363/checkpass.git
+     ```
+2. **Ejecutar el script**:
+   - Desde la línea de comandos, navega al directorio donde está ubicado el script `checkpass.sh`.
+   - Ejecuta el script con el siguiente comando:
+     ```bash
+     ./checkpass.sh
+     ```
+3. **Sigue las instrucciones del menú interactivo** para seleccionar las opciones correspondientes:
    - **1**: Especificar una contraseña.
    - **2**: Especificar la ruta al diccionario.
    - **3**: Comprobar la contraseña exacta en el diccionario.
@@ -22,11 +36,6 @@ Este script en Bash permite verificar si una contraseña especificada está pres
    - **5**: Comprobar la contraseña como subcadena en el diccionario.
    - **6**: Mostrar la ayuda con información detallada sobre el uso del script.
    - **7**: Salir del script.
-
-## Ejemplo de uso
-```bash
-./checkpass.sh
-```
 
 ## Requisitos
 - Bash (Shell de Unix/Linux)
