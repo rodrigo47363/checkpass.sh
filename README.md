@@ -1,95 +1,54 @@
-# checkpass
+# Checkpass
 
 ## Descripción
+Este script en Bash permite comprobar si una contraseña especificada está presente en un archivo de diccionario.
 
-`checkpass.sh` es un script de Bash diseñado para verificar si una contraseña específica está presente en un archivo de diccionario. Este script es útil para comprobar la seguridad de contraseñas, asegurando que no estén entre las contraseñas comúnmente utilizadas y conocidas.
-
-## Características
-
-- **Interfaz interactiva**: Proporciona un menú fácil de usar para que los usuarios especifiquen la contraseña y la ruta al diccionario.
-- **Verificación de archivos**: Comprueba si el archivo de diccionario especificado existe antes de realizar la búsqueda.
-- **Mensajes de ayuda**: Incluye una opción de ayuda para guiar a los usuarios en el uso del script.
-
-## Requisitos
-
-- Bash
-
-## Instalación
-
-1. **Clonar el repositorio:**
-
-    ```bash
-    git clone https://github.com/rodrigo47363/checkpass.git
-    cd checkpass
-    ```
-
-2. **Dar permisos de ejecución:**
-
-    ```bash
-    chmod +x checkpass.sh
-    ```
+## Funcionalidades
+- **Especificar una contraseña**: Permite al usuario ingresar la contraseña que desea buscar.
+- **Especificar la ruta al diccionario**: Solicita al usuario la ruta al archivo de diccionario donde se realizará la búsqueda.
+- **Comprobar la contraseña en el diccionario**: Realiza la búsqueda de la contraseña especificada en el archivo de diccionario utilizando optimización con `strings` y `grep`.
+- **Mostrar ayuda**: Proporciona información sobre cómo utilizar el script y las opciones disponibles.
+- **Salir**: Termina la ejecución del script.
 
 ## Uso
+1. Ejecuta el script `checkpass.sh` desde la línea de comandos.
+2. Sigue las instrucciones del menú interactivo para seleccionar las opciones correspondientes:
+   - **1**: Especificar una contraseña.
+   - **2**: Especificar la ruta al diccionario.
+   - **3**: Comprobar la contraseña en el diccionario.
+   - **4**: Mostrar la ayuda con información detallada sobre el uso del script.
+   - **5**: Salir del script.
 
-1. **Ejecutar el script:**
-
-    ```bash
-    ./checkpass.sh
-    ```
-
-2. **Seguir el menú interactivo:**
-
-    - **Opción 1**: Especificar una contraseña para buscar.
-    - **Opción 2**: Especificar la ruta al archivo de diccionario.
-    - **Opción 3**: Comprobar si la contraseña está en el diccionario.
-    - **Opción 4**: Mostrar el mensaje de ayuda.
-    - **Opción 5**: Salir del script.
-
-### Ejemplo de uso
-
+## Ejemplo de uso
 ```bash
-$ ./checkpass.sh
-Seleccione una opción:
-1. Especificar una contraseña
-2. Especificar la ruta al diccionario
-3. Comprobar la contraseña en el diccionario
-4. Mostrar ayuda
-5. Salir
-Seleccione una opción: 1
-Escribe tu contraseña que quieres buscar: password123
-Seleccione una opción:
-1. Especificar una contraseña
-2. Especificar la ruta al diccionario
-3. Comprobar la contraseña en el diccionario
-4. Mostrar ayuda
-5. Salir
-Seleccione una opción: 2
-Escribe la ruta al diccionario (por ejemplo, /ruta/a/rockyou.txt): /ruta/al/diccionario/rockyou.txt
-Seleccione una opción:
-1. Especificar una contraseña
-2. Especificar la ruta al diccionario
-3. Comprobar la contraseña en el diccionario
-4. Mostrar ayuda
-5. Salir
-Seleccione una opción: 3
-La contraseña 'password123' se encuentra en el diccionario.
+./checkpass.sh
 ```
 
-## Contribuciones
+## Requisitos
+- Bash (Shell de Unix/Linux)
 
-¡Las contribuciones son bienvenidas! Por favor, sigue los siguientes pasos para contribuir:
+## Notas
+- Asegúrate de proporcionar la ruta correcta al archivo de diccionario para una búsqueda efectiva.
+- La búsqueda se optimiza utilizando `strings` para extraer cadenas imprimibles del diccionario y `grep` para buscar la contraseña de manera eficiente.
 
-1. Haz un fork del repositorio.
-2. Crea una nueva rama (`git checkout -b feature/nueva-funcionalidad`).
-3. Realiza tus cambios y haz commit (`git commit -am 'Añadir nueva funcionalidad'`).
-4. Haz push a la rama (`git push origin feature/nueva-funcionalidad`).
-5. Abre un Pull Request.
+---
 
-## Licencia
+Este script ha sido desarrollado por [rodrigo47363] github.com/rodrigo47363 para facilitar la verificación de contraseñas en archivos de diccionario de manera rápida y efectiva.
 
-Este proyecto está licenciado bajo la Licencia MIT. Para más detalles, consulta el archivo [LICENSE](LICENSE).
+```bash
+# Función para mostrar el banner
+mostrar_banner() {
+cat << "EOF"
+       _               _                              _
+  ___ | |__   ___  ___| | ___ __   __ _ ___ ___   ___| |__
+ / _ \| '_ \ / _ \/ __| |/ / '_ \ / _` / __/ __| / __| '_ \
+| (_) | | | |  __/ (__|   <| |_) | (_| \__ \__ \_\__ \ | | |
+ \___/|_| |_|\___|\___|_|\_\ .__/ \__,_|___/___(_)___/_| |_|
+                           |_|
 
-## Contacto
+EOF
+}
+```
 
-Para cualquier pregunta o sugerencia, por favor, contacta a [tu-email@dominio.com](mailto:tu-email@dominio.com).
+¡Disfruta utilizando checkpass para verificar contraseñas de manera segura y eficiente!
 ```
